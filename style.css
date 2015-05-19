@@ -1,0 +1,15 @@
+/*
+    Theme name: Hjelle seter 2
+    ThemeURI: http://localhost:8888/
+    Description: This is a child theme of Bootstrap basic.
+    Author: Jonas Kossai Flønes
+    Author URI: http://www.jonaskf.net
+    Template: bootstrap-basic
+    Version: 0.1;
+
+*/
+@import url("../bootstrap-basic/style.css");
+
+body{
+
+}
