@@ -181,7 +181,7 @@ require get_template_directory() . '/inc/template-widgets-hook.php';
 function breadcrumbs(){
     /* === OPTIONS === */
     $text['home']     = 'Home'; // text for the 'Home' link
-    $text['category'] = 'Archive by Category "%s"'; // text for a category page
+    $text['category'] = '%s'; // text for a category page
     $text['tax'] 	  = 'Archive for "%s"'; // text for a taxonomy page
     $text['search']   = 'Search Results for "%s" Query'; // text for a search results page
     $text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
