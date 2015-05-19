@@ -77,12 +77,13 @@
 							<div class="collapse navbar-collapse navbar-primary-collapse">
 
 								<?php
+                                $walker = new custom_nav();
                                 wp_nav_menu(
                                     array(
                                         'theme_location' => 'primary',
                                         'container' => false,
                                         'menu_class' => 'nav navbar-nav',
-                                        'walker' => new BootstrapBasicMyWalkerNavMenu()
+                                        'walker' => $walker//new BootstrapBasicMyWalkerNavMenu()
                                     )
                                 );
                                 ?>

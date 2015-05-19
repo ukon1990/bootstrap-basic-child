@@ -1,4 +1,5 @@
 <?php
+require_once('custom_nav.php');
 /**
  * Bootstrap Basic theme
  * 
