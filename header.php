@@ -33,11 +33,9 @@
 			<header role="banner">
 				<div class="row row-with-vspace site-branding">
 					<div class="col-md-6 site-title">
-						<!--
 						 <h1 class="site-title-heading">
                                     <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a>
                                 </h1>
-						-->
 						<div class="site-description">
 							<small>
 								<?php bloginfo('description'); ?> 

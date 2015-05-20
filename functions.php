@@ -180,7 +180,7 @@ require get_template_directory() . '/inc/template-widgets-hook.php';
 function breadcrumbs(){
     /* === OPTIONS === */
     $text['home']     = 'Hjem'; // text for the 'Home' link
-    $text['category'] = 'Innhold etter kategorien "%s"'; // text for a category page
+    $text['category'] = '%s'; // text for a category page - Innhold etter kategorien
     $text['tax'] 	  = 'Archive for "%s"'; // text for a taxonomy page
     $text['search']   = 'Search Results for "%s" Query'; // text for a search results page
     $text['tag']      = 'Innhold merket med "%s"'; // text for a tag page
