@@ -1,5 +1,4 @@
 <?php
-require_once('custom_nav.php');
 /**
  * Bootstrap Basic theme
  * 
@@ -180,11 +179,11 @@ require get_template_directory() . '/inc/template-widgets-hook.php';
 
 function breadcrumbs(){
     /* === OPTIONS === */
-    $text['home']     = 'Home'; // text for the 'Home' link
-    $text['category'] = '%s'; // text for a category page
+    $text['home']     = 'Hjem'; // text for the 'Home' link
+    $text['category'] = 'Innhold etter kategorien "%s"'; // text for a category page
     $text['tax'] 	  = 'Archive for "%s"'; // text for a taxonomy page
     $text['search']   = 'Search Results for "%s" Query'; // text for a search results page
-    $text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
+    $text['tag']      = 'Innhold merket med "%s"'; // text for a tag page
     $text['author']   = 'Articles Posted by %s'; // text for an author page
     $text['404']      = 'Error 404'; // text for the 404 page
 
