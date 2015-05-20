@@ -28,8 +28,9 @@ li{
 	padding-top: 4px;
 }
 
-body.archive.category h1.page-title{
-    display: none;
+h1.entry-title a{
+    /*Making the post entry title look like a normal page title, even if it's a link.*/
+    color:black;
 }
 
 .site-branding{

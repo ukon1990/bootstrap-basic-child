@@ -169,7 +169,7 @@ require get_template_directory() . '/inc/BootstrapBasicMyWalkerNavMenu.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 
-/**
+/**'
  * --------------------------------------------------------------
  * Theme widget & widget hooks
  * --------------------------------------------------------------
@@ -315,3 +315,31 @@ function breadcrumbs(){
 
     }
 } // end breadcrumbs
+
+//Sidebar stuff
+function get_sidebar_two( $name = null ) {
+    /**
+     * Fires before the sidebar template file is loaded.
+     *
+     * The hook allows a specific sidebar template file to be used in place of the
+     * default sidebar template file. If your file is called sidebar-new.php,
+     * you would specify the filename in the hook as get_sidebar( 'new' ).
+     *
+     * @since 2.2.0
+     * @since 2.8.0 $name parameter added.
+     *
+     * @param string $name Name of the specific sidebar file to use.
+     */
+    do_action( 'get_sidebar', $name );
+
+    $templates = array();
+    $name = (string) $name;
+    if ( '' !== $name )
+        $templates[] = "sidebar-{$name}.php";
+
+    $templates[] = 'sidebar.php';
+
+    // Backward compat code will be removed in a future release
+    if ('' == locate_template($templates, true))
+        load_template( ABSPATH . WPINC . '/theme-compat/sidebar.php');
+}
