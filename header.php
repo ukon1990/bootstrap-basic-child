@@ -51,16 +51,15 @@
 							<?php dynamic_sidebar('header-right'); ?> 
 						</div>
 						<div class="clearfix"></div>
-						<?php } // endif; ?> 
-					</div>
-				</div><!--.site-branding-->
-				
-				<div class="row main-navigation">
-					<div class="col-md-12">
-						<nav class="navbar navbar-default" role="navigation">
-							<div class="navbar-header">
+						<?php } // endif; ?>
 
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary-collapse">
+                        <!-- Navbar start -->
+                        <div class="row main-navigation">
+                            <div class="col-md-12">
+                                <nav class="navbar navbar-default" role="navigation">
+                                    <div class="navbar-header">
+
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary-collapse">
 									<span class="sr-only">
                                         <?php
                                         _e('Toggle navigation',
@@ -68,29 +67,34 @@
                                         );
                                         ?>
                                     </span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-							
-							<div class="collapse navbar-collapse navbar-primary-collapse">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
 
-								<?php
-                                wp_nav_menu(
-                                    array(
-                                        'theme_location' => 'primary',
-                                        'container' => false,
-                                        'menu_class' => 'nav navbar-nav',
-                                        'walker' => new BootstrapBasicMyWalkerNavMenu()
-                                    )
-                                );
-                                ?>
-								<?php dynamic_sidebar('navbar-right'); ?> 
-							</div><!--.navbar-collapse-->
-						</nav>
+                                    <div class="collapse navbar-collapse navbar-primary-collapse">
+
+                                        <?php
+                                        wp_nav_menu(
+                                            array(
+                                                'theme_location' => 'primary',
+                                                'container' => false,
+                                                'menu_class' => 'nav navbar-nav',
+                                                'walker' => new BootstrapBasicMyWalkerNavMenu()
+                                            )
+                                        );
+                                        ?>
+                                        <?php dynamic_sidebar('navbar-right'); ?>
+                                    </div><!--.navbar-collapse-->
+                                </nav>
+                            </div>
+                        </div><!--.main-navigation end-->
 					</div>
-				</div><!--.main-navigation-->
+				</div><!--.site-branding-->
+
+                <!-- Navbar original pos-->
+
 
                 <!-- Adding breadcrumbs -->
                 <?php

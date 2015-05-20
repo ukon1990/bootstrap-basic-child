@@ -31,3 +31,25 @@ li{
 body.archive.category h1.page-title{
     display: none;
 }
+
+.site-branding{
+    width:100%;
+}
+.site-title {
+    width:30%;
+}
+.col-md-12{
+    margin-top:2%;
+    width:145%
+}
+
+@media screen and (max-width: 991px) {
+    /*On low-res devices*/
+    .site-title {
+        width:100%;
+    }
+    .col-md-12{
+        margin-top:2%;
+        width:100%;
+    }
+}
