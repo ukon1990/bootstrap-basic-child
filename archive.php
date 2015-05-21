@@ -18,15 +18,21 @@ $main_column_size = bootstrapBasicGetMainColumnSize();
         <?php if (have_posts()) { ?>
             <?php
             /* Start the Loop */
-            while (have_posts()) {
-                the_post();
+            if(!term_exists(get_page_by_name(get_the_archive_title()))){
+                while (have_posts()) {
+                    echo '<p>'.get_page_by_name(get_the_archive_title()).'</p>';
+                    the_post();
 
-                /* Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
-                get_template_part('content', get_post_format());
-            } //endwhile;
+                    /* Include the Post-Format-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                     */
+                    get_template_part('content', get_post_format());
+                } //endwhile;
+            }else{
+                echo '<p>Jepp jepp</p>';
+            }
+
             ?>
 
             <?php bootstrapBasicPagination(); ?>

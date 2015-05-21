@@ -211,6 +211,7 @@ function breadcrumbs(){
 
 
         if ( is_category() ) {
+            //todo: Logic for replacing category link with page link if page with same name exists
             $thisCat = get_category(get_query_var('cat'), false);
             if ($thisCat->parent != 0) {
                 $cats = get_category_parents($thisCat->parent, TRUE, $delimiter);
@@ -342,4 +343,10 @@ function get_sidebar_two( $name = null ) {
     // Backward compat code will be removed in a future release
     if ('' == locate_template($templates, true))
         load_template( ABSPATH . WPINC . '/theme-compat/sidebar.php');
+}
+function get_page_by_name($pagename)
+{
+    $pages = get_pages();
+    foreach ($pages as $page) if ($page->post_name == $pagename) return $page;
+    return false;
 }
