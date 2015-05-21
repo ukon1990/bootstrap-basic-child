@@ -13,10 +13,18 @@ get_header();
 $main_column_size = bootstrapBasicGetMainColumnSize();
 ?>
 <?php
+$script = '';
 //Checking if there is a category that corresponds with the page name.
 if(term_exists(get_cat_ID(get_the_title())) == true){
     //Adding left sidebar
     get_sidebar('left');
+
+}else{
+    echo '<style type="text/css">
+        #main-column {
+            width:100%;
+        }
+        </style>';
 }
 ?>
 				<div class="col-md-<?php echo $main_column_size; ?> content-area" id="main-column">

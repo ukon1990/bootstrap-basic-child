@@ -32,6 +32,45 @@ h1.entry-title a{
     /*Making the post entry title look like a normal page title, even if it's a link.*/
     color:black;
 }
+/*Static banner and nav bar if window size exceeds 992 px*/
+@media screen and (min-width:1250px){/*Was 992px, temp 1250px to test*/
+    .fixed-top{
+        position:fixed;
+        z-index: 10;
+        width:60%;
+        padding-left:2%;
+        background-color:#ffffff;
+        height:10em;
+    }
+
+    /*Adjusting the marign to the top, so that it falls below the banner*/
+    #content{
+        margin-top:10em;
+    }
+
+    .site-footer{
+        /*
+        position: fixed;
+        bottom:0px;
+        width:60%;
+        height:3em;
+        background-color:#ffffff;
+        */
+    }
+}
+
+/*Giving content a border*/
+#content{
+    border: 1px solid #eee;
+    margin-left:0.1%;
+    width:100%;
+}
+/*Resetting the post/page border to 0px*/
+#main-column .post, #main-column .page {
+    border: 0px solid #eee;
+    margin-bottom: 20px;
+    padding: 10px;
+}
 
 .site-branding{
     width:100%;

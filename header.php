@@ -18,7 +18,10 @@
 
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		
+		<script type="text/javascript">
+            //document.getElementById('navbar-fixed-comp').style.marginTop = document.getElementById('fixed-top').getHeight;
+
+		</script>
 		<!--wordpress head-->
 		<?php wp_head(); ?>
 	</head>
@@ -30,7 +33,7 @@
 		
 		<div class="container page-container">
 			<?php do_action('before'); ?> 
-			<header role="banner">
+                <header role="banner" class="fixed-top">
 				<div class="row row-with-vspace site-branding">
 					<div class="col-md-6 site-title">
 						 <h1 class="site-title-heading">
@@ -103,4 +106,4 @@
 			</header>
 			
 			
-			<div id="content" class="row row-with-vspace site-content">
+			<div id="content" class="row row-with-vspace site-content navbar-fixed-comp">
