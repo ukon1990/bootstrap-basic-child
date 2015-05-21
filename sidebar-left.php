@@ -5,12 +5,17 @@
         <!-- Modded category sidebar start -->
         <?php
         if (is_category()) {
-            $cat = get_query_var('cat');
+            //Getting a string list with parents
+            $parents = get_category_parents(get_query_var('cat'));
+            //Turning it into an array
+            $arrayen = explode('/', $parents);
+            //Getting the top parent of the category, and makes sure that it always shows all the categories and getting the top parent's ID.
+            $cat = get_cat_ID($arrayen[0]);
             $this_category = get_category($cat);
             $this_category = wp_list_categories('hide_empty=0&hierarchical=true&orderby=id&show_count=0&title_li=&use_desc_for_title=1&child_of='.$this_category->cat_ID."&echo=0");
             if($this_category !='<li>No categories</li>')
             {
-                //todo: Fix it so that it shows the second parent item!
+                //printing out the list
                 echo '<ul>'.$this_category.'</ul>';
             }
         }else if (is_page()){
