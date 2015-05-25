@@ -214,9 +214,25 @@ function breadcrumbs(){
             //todo: Logic for replacing category link with page link if page with same name exists
             $thisCat = get_category(get_query_var('cat'), false);
             if ($thisCat->parent != 0) {
+                //Getting the top parent ID
+                $parents = get_category_parents(get_query_var('cat'));
+                $arrayen = explode('/', $parents);
+                $cata = get_cat_ID($arrayen[0]);
+
+                //Getting url's and all that jazz
                 $cats = get_category_parents($thisCat->parent, TRUE, $delimiter);
                 $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
                 $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
+                //Getting the parent url and replaing it with something else
+                if(term_exists(get_page_by_title(get_cat_name(get_cat_name($cata)))) == false)
+                {
+                    $old_url = get_category_link(get_cat_top_parent(get_query_var('cat')));
+                    $new_url = get_page_link(get_page_by_title(get_cat_name($cata)));
+                    $cats = str_replace($old_url, $new_url, $cats);
+                    //Commented method prints out old and new url
+                    //echo '<p>Old url:'.get_category_link(get_cat_top_parent(get_query_var('cat'))).'</p>';
+                    //echo '<p>New url:'.get_page_link(get_page_by_title(get_cat_name($cata))).'</p>';
+                }
                 echo $cats;
             }
             echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
@@ -357,4 +373,15 @@ function category_has_parent($catid){
         return true;
     }
     return false;
+}
+
+function get_cat_top_parent($child_id){
+    //Getting a string list with parents
+    $parents = get_category_parents($child_id);
+    //Turning it into an array
+    $arrayen = explode('/', $parents);
+    //Getting the top parent of the category, and makes sure that it always shows all the categories and getting the top parent's ID.
+    $cat = get_cat_ID($arrayen[0]);
+    //Returning the name of the top parent category.
+    return get_category($cat);
 }

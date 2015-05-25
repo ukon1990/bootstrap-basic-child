@@ -79,7 +79,7 @@
                                     <div class="collapse navbar-collapse navbar-primary-collapse">
 
                                         <?php
-                                        wp_nav_menu(
+                                        $nav = wp_nav_menu(
                                             array(
                                                 'theme_location' => 'primary',
                                                 'container' => false,
@@ -87,7 +87,11 @@
                                                 'walker' => new BootstrapBasicMyWalkerNavMenu()
                                             )
                                         );
+                                        //todo: Benytt str_replace(fra, til, $nav); for å bytte ID hvis parent kategori tilsvarer noe som finnes i pages.
+                                        echo $nav;
+
                                         ?>
+
                                         <?php dynamic_sidebar('navbar-right'); ?>
                                     </div><!--.navbar-collapse-->
                                 </nav>
@@ -95,9 +99,6 @@
                         </div><!--.main-navigation end-->
 					</div>
 				</div><!--.site-branding-->
-
-                <!-- Navbar original pos-->
-
 
                 <!-- Adding breadcrumbs -->
                 <?php
