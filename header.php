@@ -84,12 +84,11 @@
                                                 'theme_location' => 'primary',
                                                 'container' => false,
                                                 'menu_class' => 'nav navbar-nav',
-                                                'walker' => new BootstrapBasicMyWalkerNavMenu()
+                                                'walker' => new WalkerHjelle()
                                             )
                                         );
-                                        //todo: Benytt str_replace(fra, til, $nav); for å bytte ID hvis parent kategori tilsvarer noe som finnes i pages.
-                                        echo $nav;
 
+                                        echo $nav;
                                         ?>
 
                                         <?php dynamic_sidebar('navbar-right'); ?>

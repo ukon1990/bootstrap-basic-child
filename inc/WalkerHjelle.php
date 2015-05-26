@@ -7,7 +7,7 @@
 
 
 if (!class_exists('BootstrapBasicMyWalkerNavMenu')) {
-	class BootstrapBasicMyWalkerNavMenu extends Walker_Nav_Menu
+	class WalkerHjelle extends Walker_Nav_Menu
 	{
 
 
@@ -81,7 +81,28 @@ if (!class_exists('BootstrapBasicMyWalkerNavMenu')) {
 			}
 			$classes[] = 'menu-item-' . $item->ID;
 			//If we are on the current page, add the active class to that menu item.
-			$classes[] = ($item->current) ? 'active' : '';
+            if(is_category()){
+                //Getting the top parent ID
+                $parents = get_category_parents(get_query_var('cat'));
+                $arrayen = explode('/', $parents);
+                $cata = get_cat_ID($arrayen[0]);
+                $cat_selected = false;
+                //todo: Fix
+                //checking if there is a top parent that has a equivilent page.
+                if(term_exists(get_page_by_title(get_cat_name($cata))) == true)
+                {
+                    $cat_selected = true;
+                    /*
+                    if(){
+                        $cat_selected = true;
+                    }else{
+                        $cat_selected = true;
+                    }*/
+                }else{
+                    $cat_selected = false;
+                }
+            }
+			$classes[] = ($item->current) ? 'active' : ($cat_selected ? 'active': '');
 
 			//Make sure you still add all of the WordPress classes.
 			$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));

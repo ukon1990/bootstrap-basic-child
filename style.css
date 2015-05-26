@@ -37,7 +37,7 @@ h1.entry-title a{
     .fixed-top{
         position:fixed;
         z-index: 10;
-        width:60%;
+        width:100%;
         padding-left:2%;
         background-color:#ffffff;
         height:10em;
@@ -73,7 +73,7 @@ h1.entry-title a{
 }
 
 .site-branding{
-    width:100%;
+    width:60%;
 }
 .site-title {
     width:30%;

@@ -160,7 +160,7 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Custom dropdown menu and navbar in walker class
  */
-require get_template_directory() . '/inc/BootstrapBasicMyWalkerNavMenu.php';
+require get_stylesheet_directory() . '/inc/WalkerHjelle.php'; //get_locale_stylesheet_uri() get_template_directory()
 
 
 /**
