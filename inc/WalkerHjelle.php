@@ -84,26 +84,29 @@ if (!class_exists('BootstrapBasicMyWalkerNavMenu')) {
             $cat_selected = false;
             if(is_category()){
                 //Getting the top parent ID
-                $parents = get_category_parents(get_query_var('cat'));
-                $arrayen = explode('/', $parents);
+                $arrayen = explode('/', get_category_parents(get_query_var('cat')));
                 $cata = get_cat_ID($arrayen[0]);
                 //todo: Fix
                 //checking if there is a top parent that has a equivilent page.
-                if(term_exists(get_page_by_title(get_cat_name($cata))) == true)
+                if(
+                    term_exists
+                    (
+                        get_page_by_title(
+                            get_cat_name(
+                                get_cat_name($cata)
+                            )
+                        )
+                    ) == false
+                    && get_the_title($item->ID) == get_cat_name(get_cat_name($cata))
+                )
                 {
                     $cat_selected = true;
-                    /*
-                    if(){
-                        $cat_selected = true;
-                    }else{
-                        $cat_selected = true;
-                    }*/
                 }else{
                     $cat_selected = false;
                 }
             }
-			$classes[] = ($item->current) ? 'active' : ($cat_selected ? 'active': '');
-
+            //Defining what classes each element should have, and if it is selected or has a parent selected.
+			$classes[] = ($item->current) ? 'active' : ($cat_selected ? ((get_the_title(get_post_meta( $item->ID, '_menu_item_object_id', true )) == get_cat_name($cata) ? 'active' : '')) : '');
 			//Make sure you still add all of the WordPress classes.
 			$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
 			$class_names = ' class="' . esc_attr($class_names) . '"';

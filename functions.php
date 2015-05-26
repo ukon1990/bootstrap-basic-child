@@ -211,7 +211,7 @@ function breadcrumbs(){
 
 
         if ( is_category() ) {
-            //todo: Logic for replacing category link with page link if page with same name exists
+            //Logic for replacing category link with page link if page with same name exists
             $thisCat = get_category(get_query_var('cat'), false);
             if ($thisCat->parent != 0) {
                 //Getting the top parent ID
