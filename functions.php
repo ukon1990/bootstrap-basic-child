@@ -226,8 +226,8 @@ function breadcrumbs(){
                 //Getting the parent url and replaing it with something else
                 if(term_exists(get_page_by_title(get_cat_name(get_cat_name($cata)))) == false)
                 {
-                    $old_url = get_category_link(get_cat_top_parent(get_query_var('cat')));
-                    $new_url = get_page_link(get_page_by_title(get_cat_name($cata)));
+                    $old_url = '"'.get_category_link(get_cat_top_parent(get_query_var('cat'))).'"';
+                    $new_url = '"'.get_page_link(get_page_by_title(get_cat_name($cata))).'"';
                     $cats = str_replace($old_url, $new_url, $cats);
                     //Commented method prints out old and new url
                     //echo '<p>Old url:'.get_category_link(get_cat_top_parent(get_query_var('cat'))).'</p>';
