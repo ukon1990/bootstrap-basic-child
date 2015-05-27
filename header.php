@@ -58,43 +58,41 @@
 
                         <!-- Navbar start -->
                         <div class="row main-navigation">
-                            <div class="col-md-12">
-                                <nav class="navbar navbar-default" role="navigation">
-                                    <div class="navbar-header">
+                            <nav class="navbar navbar-default" role="navigation">
+                                <div class="navbar-header">
 
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary-collapse">
-									<span class="sr-only">
-                                        <?php
-                                        _e('Toggle navigation',
-                                            'bootstrap-basic'
-                                        );
-                                        ?>
-                                    </span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                    </div>
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary-collapse">
+                                <span class="sr-only">
+                                    <?php
+                                    _e('Toggle navigation',
+                                        'bootstrap-basic'
+                                    );
+                                    ?>
+                                </span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
 
-                                    <div class="collapse navbar-collapse navbar-primary-collapse">
+                                <div class="collapse navbar-collapse navbar-primary-collapse">
 
-                                        <?php
-                                        $nav = wp_nav_menu(
-                                            array(
-                                                'theme_location' => 'primary',
-                                                'container' => false,
-                                                'menu_class' => 'nav navbar-nav',
-                                                'walker' => new WalkerHjelle()
-                                            )
-                                        );
+                                    <?php
+                                    $nav = wp_nav_menu(
+                                        array(
+                                            'theme_location' => 'primary',
+                                            'container' => false,
+                                            'menu_class' => 'nav navbar-nav',
+                                            'walker' => new WalkerHjelle()
+                                        )
+                                    );
 
-                                        echo $nav;
-                                        ?>
+                                    echo $nav;
+                                    ?>
 
-                                        <?php dynamic_sidebar('navbar-right'); ?>
-                                    </div><!--.navbar-collapse-->
-                                </nav>
-                            </div>
+                                    <?php dynamic_sidebar('navbar-right'); ?>
+                                </div><!--.navbar-collapse-->
+                            </nav>
                         </div><!--.main-navigation end-->
 					</div>
 				</div><!--.site-branding-->

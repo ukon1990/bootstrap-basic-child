@@ -34,56 +34,90 @@ h1.entry-title a{
 }
 /*Static banner and nav bar if window size exceeds 992 px*/
 @media screen and (min-width:1250px){/*Was 992px, temp 1250px to test*/
+    .container{
+        width:1170px;
+    }
+    .fixed-top{
+        margin-left:auto;
+        margin-right:auto;
+        position:fixed;
+        z-index: 10;
+        padding-left:2%;
+        background-color:#ffffff;
+        height:10em;
+        width:1170px;
+    }
+
+    /*Adjusting the marign to the top, so that it falls below the banner and giving content a border*/
+    #content{
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:10em;
+        margin-bottom:7em;
+        border: 1px solid #eee;
+        margin-left:0.1%;
+        width:1170px;
+    }
+
+    #site-footer{
+        margin-left:auto;
+        margin-right:auto;
+        position: fixed;
+        bottom:0px;
+        height:4em;
+        width:1170px;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1250px){/*Was 992px, temp 1250px to test*/
     .fixed-top{
         position:fixed;
         z-index: 10;
-        width:100%;
+        width:970px;
         padding-left:2%;
         background-color:#ffffff;
         height:10em;
     }
 
-    /*Adjusting the marign to the top, so that it falls below the banner*/
+    .col-md-6, .page-header-top-right{
+        margin-left:-8px;
+        width:60%;
+    }
+    .site-title{
+        width:40%;
+    }
+    .menu-item,.menu-item-type-post_type, a{
+
+    }
+    .row .row-with-vspace .site-branding{
+        width:10%;
+    }/*
+    .col-md-6, .site-title{
+        width:30%;
+    }*/
+    .col-md-12{
+        margin-top:2%;
+        width:70%;
+    }
+
+    /*Adjusting the marign to the top, so that it falls below the banner and giving content a border*/
     #content{
         margin-top:10em;
+        margin-bottom:7em;
+        border: 1px solid #eee;
+        margin-left:0.1%;
+        width:970px;
     }
 
-    .site-footer{
-        /*
+    #site-footer{
+        margin-left:auto;
+        margin-right:auto;
         position: fixed;
         bottom:0px;
-        width:60%;
-        height:3em;
-        background-color:#ffffff;
-        */
+        height:4em;
+        width:970px;
     }
 }
-
-/*Giving content a border*/
-#content{
-    border: 1px solid #eee;
-    margin-left:0.1%;
-    width:100%;
-}
-/*Resetting the post/page border to 0px*/
-#main-column .post, #main-column .page {
-    border: 0px solid #eee;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
-.site-branding{
-    width:60%;
-}
-.site-title {
-    width:30%;
-}
-.col-md-12{
-    margin-top:2%;
-    width:145%
-}
-
-@media screen and (max-width: 991px) {
+@media screen and (min-width:740px) and (max-width: 991px) {
     /*On low-res devices*/
     .site-title {
         width:100%;
@@ -92,4 +126,56 @@ h1.entry-title a{
         margin-top:2%;
         width:100%;
     }
+
+    .fixed-top{
+        position:fixed;
+        z-index: 10;
+        background-color:#ffffff;
+        height:10em;
+        width:750px;
+    }
+    div #crumbs{
+        clear:both;
+        margin-top:-3em;
+        background:white;
+    }
+
+    /*Adjusting the marign to the top, so that it falls below the banner and giving content a border*/
+    #content{
+        margin-top:13em;
+        margin-bottom:7em;
+        border: 1px solid #eee;
+        margin-left:0.1%;
+        width:100%;
+    }
+
+    #site-footer{
+        position: fixed;
+        bottom:0px;
+        height:4em;
+        width:100%;
+    }
+    .row{
+        margin-right:0px;
+    }
 }
+
+/*Resetting the post/page border to 0px*/
+#main-column .post, #main-column .page {
+    border: 0px solid #eee;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/*
+.site-title .col-md-12{
+    width:30%;
+    margin-top:2%;
+    width:145%
+}*/
+/*
+.col-md-12{
+    margin-top:2%;
+    width:145%
+}*/
+
