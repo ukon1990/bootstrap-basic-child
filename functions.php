@@ -126,7 +126,7 @@ if (!function_exists('bootstrapBasicEnqueueScripts')) {
 	/**
 	 * Enqueue scripts & styles
 	 */
-	function bootstrapBasicEnqueueScripts() 
+	function bootstrapBasicEnqueueScripts()
 	{
 		wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css');
 		wp_enqueue_style('bootstrap-theme-style', get_template_directory_uri() . '/css/bootstrap-theme.min.css');
@@ -229,9 +229,30 @@ function breadcrumbs(){
                     $old_url = '"'.get_category_link(get_cat_top_parent(get_query_var('cat'))).'"';
                     $new_url = '"'.get_page_link(get_page_by_title(get_cat_name($cata))).'"';
                     $cats = str_replace($old_url, $new_url, $cats);
-                    //Commented method prints out old and new url
-                    //echo '<p>Old url:'.get_category_link(get_cat_top_parent(get_query_var('cat'))).'</p>';
-                    //echo '<p>New url:'.get_page_link(get_page_by_title(get_cat_name($cata))).'</p>';
+
+                    $categories = get_terms(
+                        'category',
+                        array('children' => 0)
+                    );
+                    //Looping through all categories
+                    foreach($categories as $c){
+                        $level = intval(2); // The level we want to check for
+                        $last_level = 0;
+                        $category=get_category(get_cat_ID($c->{'name'}));
+                        for ( $counter = 1; $counter <= $level; $counter += 1) {
+                            if ($category->category_parent) {
+                                $category=get_category($category->category_parent);
+                                $last_level = $counter;
+                            }
+                        }
+                        $last_level +=1;
+                        if ($last_level == $level) {
+                            $old_val = '<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="'.get_category_link(get_cat_ID($c->{'name'})).'">'.$c->{'name'}.'</a></span> &raquo;';
+                            $new_val = '';
+                            $cats = str_replace($old_val, $new_val, $cats);
+                        }
+                    }
+
                 }
                 echo $cats;
             }
@@ -384,4 +405,40 @@ function get_cat_top_parent($child_id){
     $cat = get_cat_ID($arrayen[0]);
     //Returning the name of the top parent category.
     return get_category($cat);
+}
+
+function get_cat_parent_lvltwo($child_id){
+    //Getting a string list with parents
+    $parents = get_category_parents($child_id);
+    //Turning it into an array
+    $arrayen = explode('/', $parents);
+    //Getting the top parent of the category, and makes sure that it always shows all the categories and getting the top parent's ID.
+    $cat = get_cat_ID($arrayen[1]);
+    //Returning the name of the top parent category.
+    return get_category($cat);
+}
+
+function replace_category_second_level($string){
+    $categories = get_terms(
+        'category',
+        array('children' => 0)
+    );
+    foreach($categories as $c){
+        $level = intval(2); // The level we want to check for
+        $last_level = 0;
+        $category=get_category(get_cat_ID($c->{'name'}));
+        for ( $counter = 1; $counter <= $level; $counter += 1) {
+            if ($category->category_parent) {
+                $category=get_category($category->category_parent);
+                $last_level = $counter;
+            }
+        }//<a rel="v:url" property="v:title" href="http://localhost/wordpress/index.php/category/kafeteria/meny/">Meny</a>
+        $last_level +=1;
+        if ($last_level == $level) {
+            $old_val = '<a href="'.get_category_link(get_cat_ID($c->{'name'})).'" >'.$c->{'name'}.'</a>';
+            $new_val = $c->{'name'};
+            $string = str_replace($old_val, $new_val, $string);
+        }
+    }
+    return $string;
 }

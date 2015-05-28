@@ -37,7 +37,15 @@ h1.entry-title a{
     .container{
         width:1170px;
     }
+    .col-md-6, .page-header-top-right{
+        margin-left:-8px;
+        width:60%;
+    }
+    .site-title{
+        width:40%;
+    }
     .fixed-top{
+        border: 1px solid #eee;/*Border for banner*/
         margin-left:auto;
         margin-right:auto;
         position:fixed;
@@ -70,6 +78,7 @@ h1.entry-title a{
 }
 @media screen and (min-width:992px) and (max-width:1250px){/*Was 992px, temp 1250px to test*/
     .fixed-top{
+        border: 1px solid #eee;/*Border for banner*/
         position:fixed;
         z-index: 10;
         width:970px;
@@ -124,7 +133,7 @@ h1.entry-title a{
     }
     .col-md-12{
         margin-top:2%;
-        width:100%;
+        width:750px;
     }
 
     .fixed-top{
@@ -134,6 +143,10 @@ h1.entry-title a{
         height:10em;
         width:750px;
     }
+    .row, .row-with-vspace, .site-branding{
+
+    }
+
     div #crumbs{
         clear:both;
         margin-top:-3em;
@@ -145,15 +158,15 @@ h1.entry-title a{
         margin-top:13em;
         margin-bottom:10em;
         border: 1px solid #eee;
-        margin-left:0.1%;
-        width:100%;
+        width:750px;
     }
 
     #site-footer{
         position: fixed;
         bottom:0px;
         height:auto;
-        width:100%;
+        width:750px;
+        margin-left:-1.5%;
     }
     .row{
         margin-right:0px;

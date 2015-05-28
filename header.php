@@ -19,7 +19,6 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		<script type="text/javascript">
-            //document.getElementById('navbar-fixed-comp').style.marginTop = document.getElementById('fixed-top').getHeight;
 
 		</script>
 		<!--wordpress head-->
