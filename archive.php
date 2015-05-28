@@ -30,7 +30,7 @@ $main_column_size = bootstrapBasicGetMainColumnSize();
                     get_template_part('content', get_post_format());
                 } //endwhile;
             }else{
-                echo '<p>Jepp jepp</p>';
+                echo '<p></p>';
             }
 
             ?>
