@@ -172,14 +172,20 @@ h1.entry-title a{
         margin-right:0px;
     }
 }
-
+@media screen and (max-width:740px){
+    #site-footer{
+        width:100%;
+    }
+}
 /*Resetting the post/page border to 0px*/
 #main-column .post, #main-column .page {
     border: 0px solid #eee;
     margin-bottom: 20px;
     padding: 10px;
 }
-
+#footer-row{
+    margin-left:5px;
+}
 /*
 .site-title .col-md-12{
     width:30%;
