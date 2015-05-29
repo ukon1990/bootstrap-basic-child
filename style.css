@@ -61,7 +61,7 @@ h1.entry-title a{
         margin-left:auto;
         margin-right:auto;
         margin-top:10em;
-        margin-bottom:10em;
+        margin-bottom:6em;
         border: 1px solid #eee;
         margin-left:0.1%;
         width:1170px;
@@ -130,7 +130,7 @@ h1.entry-title a{
     /*Adjusting the marign to the top, so that it falls below the banner and giving content a border*/
     #content{
         margin-top:10em;
-        margin-bottom:10em;
+        margin-bottom:6em;
         border: 1px solid #eee;
         margin-left:0.1%;
         width:970px;
