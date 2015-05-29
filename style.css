@@ -156,13 +156,11 @@ h1.entry-title a{
     /*Adjusting the marign to the top, so that it falls below the banner and giving content a border*/
     #content{
         margin-top:13em;
-        margin-bottom:10em;
         border: 1px solid #eee;
         width:750px;
     }
 
     #site-footer{
-        position: fixed;
         bottom:0px;
         height:auto;
         width:750px;
