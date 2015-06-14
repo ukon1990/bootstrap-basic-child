@@ -21,8 +21,12 @@
 		<script type="text/javascript">
 
 		</script>
-		<!--wordpress head-->
+
 		<?php wp_head(); ?>
+        <!--
+        Hjelle seter Wordpress Theme( A Bootstrap-basic child theme):
+        Made by: Jon Vegard Gribsrød, Jim Melby and Jonas Kossai Flønes
+        -->
 	</head>
 	<body <?php body_class(); ?>>
 		<!--[if lt IE 8]>
