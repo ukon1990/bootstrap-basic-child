@@ -226,31 +226,12 @@ h1.entry-title a{
         margin-right:10%;
         text-align: left;
     }
-
-    /*
-    #foot-right{
-        float:left;
-        width:100%;
-        margin-left:40%;
-    }
-    #address-right{
-        float: left;
-        text-align: left;
-        margin-left:0%;
-    }
-
-    #foot-left{
-        float:left;
-        width:100%;
-        margin-left:40%;
-    }
-    #address-left{
-        float: left;
-        margin-right:10%;
-        text-align: left;
-    }*/
 }
 @media screen and (max-width:740px){
+    #content{
+        width:100%;
+    }
+
     #site-footer{
         width:100%;
     }
