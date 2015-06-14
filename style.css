@@ -15,17 +15,17 @@ body{
 }
 
 blockquote{
-	font-weight: normal;
-	font-size: 14px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6{
-	padding-top: 20px;
+    padding-top: 20px;
 }
 
 li{
-	padding-top: 4px;
+    padding-top: 4px;
 }
 
 h1.entry-title a{
@@ -81,7 +81,7 @@ h1.entry-title a{
         float:right;
     }
     #address-right{
-        float: left;
+        float: right;
         text-align: left;
         margin-left:10%;
     }
@@ -90,7 +90,7 @@ h1.entry-title a{
         width:50%;
     }
     #address-left{
-        float: right;
+        /*float: right;*/
         margin-right:10%;
         text-align: left;
     }
@@ -150,7 +150,7 @@ h1.entry-title a{
         float:right;
     }
     #address-right{
-        float: left;
+        float: right;
         text-align: left;
         margin-left:10%;
     }
@@ -159,7 +159,7 @@ h1.entry-title a{
         width:50%;
     }
     #address-left{
-        float: right;
+        /*float: right;*/
         margin-right:10%;
         text-align: left;
     }
@@ -209,6 +209,26 @@ h1.entry-title a{
     }
 
     #foot-right{
+        width:50%;
+        float:right;
+    }
+    #address-right{
+        float: right;
+        text-align: left;
+        margin-left:10%;
+    }
+
+    #foot-left{
+        width:50%;
+    }
+    #address-left{
+        float:left;
+        margin-right:10%;
+        text-align: left;
+    }
+
+    /*
+    #foot-right{
         float:left;
         width:100%;
         margin-left:40%;
@@ -228,7 +248,7 @@ h1.entry-title a{
         float: left;
         margin-right:10%;
         text-align: left;
-    }
+    }*/
 }
 @media screen and (max-width:740px){
     #site-footer{
@@ -236,21 +256,20 @@ h1.entry-title a{
     }
 
     #foot-right{
-        float:left;
-        width:100%;
+        width:50%;
+        float:right;
     }
     #address-right{
-        float: left;
+        float: right;
         text-align: left;
-        margin-left:0%;
+        margin-left:10%;
     }
 
     #foot-left{
-        float:left;
-        width:100%;
+        width:50%;
     }
     #address-left{
-        float: left;
+        float:left;
         margin-right:10%;
         text-align: left;
     }
