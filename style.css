@@ -2,10 +2,10 @@
     Theme name: Hjelle seter
     ThemeURI: http://localhost:8888/
     Description: This is a child theme of Bootstrap basic.
-    Author: Jonas Kossai Flønes
+    Author: Jon Vegard Gribsrød, Jim Melby and Jonas Kossai Flønes
     Author URI: http://www.jonaskf.net
     Template: bootstrap-basic
-    Version: 0.9;
+    Version: 1.0;
 
 */
 @import url("../bootstrap-basic/style.css");
