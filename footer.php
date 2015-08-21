@@ -19,7 +19,7 @@
         </div>
         <div id="foot-right" class="col-md-6 footer-right text-right">
             <address id="address-right">
-                <span><strong>E-post</strong>: <a href="mailto:info@hjelleseter.no"">info@hjelleseter.no</a></span></br>
+                <span><strong>E-post</strong>: <a href="mailto:info@hjelleseter.no">info@hjelleseter.no</a></span></br>
                 <span><strong>Tlf</strong>: 61 24 16 95</span></br>
                 <span><strong>Adresse</strong>: Dovre, 2660 Dombås</span></br>
             </address
